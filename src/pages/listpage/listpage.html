@@ -1,0 +1,30 @@
+<ion-header>
+        <ion-navbar hideBackButton>
+            <ion-buttons class="backBtn" (click)="goToBack()" left>
+                <button ion-button icon-only class="backBtn">
+                  <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+              </button>
+            </ion-buttons>
+           <ion-title><pre>   Courier List</pre></ion-title>
+        </ion-navbar>
+       </ion-header>
+
+<ion-content padding>
+     
+    <ion-card>
+    
+        <ion-item *ngIf="users==0">
+            <p>No records</p>
+        </ion-item>
+        <ion-card *ngFor="let user of list; let i=index" [style.opacity]="user.status===0 ? '0.3' : '' " [style.z-index]="user.status===1 ? '1' : '' " padding>
+          <h2>To : <span>{{user.senderDetails.receiverName}}</span></h2>
+          <h2>Item : <span>{{user.itemDetails.courierName}}</span></h2>
+          <h2>City : <span>{{user.senderDetails.rcityName}}</span></h2>
+          <h2>Date : <span>{{user.date | date}}</span></h2>
+
+      </ion-card>
+        <!-- <ion-col col-12>
+
+        </ion-col>      -->
+      </ion-card>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-menu [content]="content">
+  <ion-content>
+      <div class="userdetails">
+          <img src="./assets/imgs/menuprofile.png" />
+          <button class="links" clear (click)="goToProfile();" menuClose>{{username}}</button>
+          <button class="links" clear (click)="goToProfile();" menuClose>{{email}}</button>
+      </div>
+      <ion-list>
+          <button menuClose ion-item (click)="openPage('home')">
+          <img src="./assets/icon/Menu_home.png" width="32" height="32" />
+          Home
+        </button>
+        
+          <div class="menudivider"></div>
+          <button menuClose ion-item (click)="openPage('settings')">
+            <img src="./assets/icon/Menu_settings.png" width="32" height="32" />
+          Settings</button>
+          <button menuClose ion-item (click)="openPage('about')">
+            <img src="./assets/icon/Menu_info.png" width="32" height="32" />
+          About</button>
+          <button menuClose ion-item (click)="openPage('update')">
+            <img src="./assets/imgs/upgrade.png" width="25" height="25" />
+          Update</button>
+          <button menuClose ion-item (click)="NotificationOpen()">
+            <img src="./assets/imgs/abt_mobile.png" width="25" height="25" />
+          Notifications</button>
+          <div class="menudivider"></div>
+          <button menuClose ion-item (click)="logout()">
+            <img src="./assets/icon/Menu_logout.png" width="32" height="32" />
+          Logout</button>
+      </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

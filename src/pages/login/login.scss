@@ -1,0 +1,121 @@
+page-login {
+    font-family: 'Montserrat', sans-serif !important;
+    .content {
+        .scroll-content {
+            padding: 16px 25px !important;
+        }
+
+    }
+    .content {
+        background: url('../assets/imgs/dashboardbg.png') no-repeat left top;
+        background-size: cover;
+        .logoholder {
+            margin-top: 20%;
+            margin-bottom: 8%;
+            img {
+                width: 55%;
+                height: auto
+            }
+        }
+        .signup {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.25em;
+            margin: 15px 0 0;
+        }
+        .bttnbar {
+            padding-top: 0;
+            color:brown
+        }
+        .bttnbar .button.forgetpass {
+            font-size: 1em;
+        }
+        .captionText {
+            font-size: 1.25em;
+            width: 200px;
+            margin-top: 15%;
+            margin-bottom: 15%;
+        }
+        .button-default {
+            height: 4.5rem;
+            font-size: 2rem;
+        }
+        ion-label {
+            color: #666;
+        }
+        ion-icon {
+            font-size: 1.5em;
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+    }
+    .list .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child,
+    .list .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .item {
+        padding-left: 0;
+    }
+    .list>.item-block:first-child {
+        border: 0;
+    }
+    .item:first-child {
+        margin-bottom: 20px;
+        ;
+    }
+    .list .item-block .item-inner {
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+    .forgetpassword .label {
+        margin: 0;
+        text-align: right;
+        button {
+            padding: 10px 0;
+            font-weight: bold;
+        }
+    }
+    .wifi img {
+        height: 3rem;
+        width: 3rem;
+        margin-left: 10px;
+        vertical-align: middle;
+    }
+}
+
+.loading-md .loading-wrapper,
+.loading-ios .loading-wrapper {
+    background: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+ion-backdrop {
+    background-color: #fff;
+}
+
+ion-modal {
+    @media (min-width: 300px) and (min-height: 500px) {
+        ion-backdrop {
+            visibility: visible;
+        }
+    }
+    .modal-wrapper {
+        position: absolute;
+        overflow: hidden;
+        max-width: 280px;
+        border-radius: 2px;
+        width: 80vw;
+        height: 35vh;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 0;
+        box-shadow: 0 16px 20px rgba(0, 0, 0, .4);
+        background-color: #fafafa;
+    }
+}

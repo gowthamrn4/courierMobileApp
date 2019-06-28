@@ -1,0 +1,35 @@
+page-address {
+    .fontFamily {
+        font-family: 'Niramit', sans-serif;
+    }
+    .segment .segment-button {
+        background: #88325c;
+        color: white;
+        border: 1px solid white;
+    }
+    .segment .segment-button.segment-activated {
+        color: #88325c;
+        background-color: white;
+        border: 1px solid #88325c;
+    }
+    .notifyBorder {
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-right: 12px;
+        margin-top: 0.5rem;
+    }
+    .content1 li,
+    .note,
+    .by {
+        display: inline;
+        font-size: 12px;
+        font-family: 'Niramit', sans-serif;
+    }
+    .label-md {
+        margin: 13px 8px 13px 8px;
+        font-family: "'Niramit', sans-serif"
+    }
+    .list-ios>.item-block:last-child {
+        border-bottom: 0.55px solid black !important;
+    }
+}

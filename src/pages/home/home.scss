@@ -1,0 +1,60 @@
+ page-home {
+        font-family: 'Montserrat', sans-serif !important;
+        .arrow-up {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 5px solid black;
+        }
+        .userdetails {
+            background: url('../assets/imgs/menubg.png') no-repeat left top;
+            background-size: cover;
+            text-align: center;
+            padding-top: 15%;
+            padding-bottom: 10%;
+            img {
+                width: 150px;
+                height: 150px;
+            }
+            button.links {
+                background: none;
+                padding: 10px 0 0;
+                width: 100%;
+                font-size: 1.5rem;
+            }
+            button.links:first-child {
+                color: #3e3e3e;
+                margin-bottom: 0;
+            }
+            button.links:last-child {
+                color: #8d8d8d;
+            }
+        }
+        .list .item-block .item-inner {
+           
+            ion-label {
+                overflow: visible;
+            }
+        }
+        ion-list img {
+            vertical-align: middle;
+            margin-right: 15px;
+            margin-top: -2px;
+        }
+        .menudivider {
+            border-bottom: 1px solid #eee;
+            height: 1px;
+            margin: 15px;
+            width: 90%;
+        }
+        .hide {
+            display: none;
+        }
+    }
+    .show-menu {
+        .list .item-block .item-inner {
+           border: none
+        }
+ }
+

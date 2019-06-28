@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+      <ion-buttons class="backBtn" (click)="goToBack()" left>
+          <button ion-button icon-only class="backBtn">
+            <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+     <ion-title>Add Courier</ion-title>
+  </ion-navbar>
+ </ion-header>
+
+<ion-content padding>
+  <form name="ruleaddform" id="ruleaddform" #ruleaddform="ngForm" novalidate>
+      <ion-row>
+          <ion-col col-12>
+              <ion-item>
+                  <ion-label floating >Item Name</ion-label>
+                  <ion-input type="text"  id="courierName" required name="courierName" #courierName="ngModel" ngModel minlength="3" maxlength="10"></ion-input>
+              </ion-item>
+          </ion-col>
+          <ion-col col-12>
+              <ion-item>
+                  <ion-label  floating>Item Detail</ion-label>
+                  <ion-input type="text"   id="cdetails" name="cdetails" #cdetails="ngModel" ngModel></ion-input>
+              </ion-item>
+
+          </ion-col>
+        
+          <ion-col col-12>
+              <ion-item>
+                  <ion-label  floating>Item Kg</ion-label>
+                  <ion-select  id="itemKg" name="itemKg" #itemKg="ngModel" ngModel required>
+                      <ion-option [value]='' disabled>Select</ion-option>
+                      <ion-option *ngFor="let data of Courierprice" [value]="data.kg">{{data.kg}}</ion-option>
+                  </ion-select>
+              </ion-item>
+            </ion-col>
+
+            <ion-col col-12>
+                    <ion-item>
+                        <ion-label  floating>Select Store</ion-label>
+                        <ion-select  id="location" name="location" #location="ngModel" ngModel required>
+                            <ion-option [value]='' disabled>Select</ion-option>
+                            <ion-option *ngFor="let data of locationCurrent" [value]="data.name">{{data.name}}</ion-option>
+                        </ion-select>
+                    </ion-item>
+                  </ion-col>
+        
+      </ion-row>
+      <div class="bttnbar">
+          <button style="backgroundcolor:brown" ion-button block type="submit" [disabled]="!ruleaddform.valid" (click)="saveRequest(ruleaddform.value)">Next</button>
+      </div>
+  </form>
+</ion-content>

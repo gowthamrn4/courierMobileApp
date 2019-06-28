@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-navbar>
+            <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-navbar>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding>
+   
+
+    <div class="quicklinks">
+        <ion-grid class="gatewayselection">
+            <ion-row>
+                <ion-col>
+                    <button type="button" (click)="openPage('addFeed')">
+                    <img src="./assets/imgs/utilities.png" />
+                    <p>Add Couriers</p>
+                </button>
+                </ion-col>
+                <ion-col>
+                    <button type="button" (click)="openPage('list')">
+                    <img src="./assets/imgs/groups.png" />
+                    <p>Request</p>
+                </button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <button type="button" (click)="openPage('tracking')">
+                              <img src="./assets/imgs/mode.png" />
+                              <p>Tacking</p>
+                          </button>
+                </ion-col>
+                <ion-col>
+                    <button type="button" (click)="openPage('history')">
+                      <img src="./assets/imgs/schedule.png" />
+                      <p>History</p>
+                  </button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <button type="button" (click)="openPage('profile')">
+                              <img src="./assets/icon/Menu_groups.png" />
+                              <p>Profile</p>
+                          </button>
+                </ion-col>
+                <ion-col>
+                    <button type="button" (click)="openPage('address')">
+                      <img src="./assets/icon/Menu_settings.png" />
+                      <p>Address</p>
+                  </button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

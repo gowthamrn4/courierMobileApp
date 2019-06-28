@@ -1,0 +1,30 @@
+<ion-content padding>
+    <form name="loginform" id="loginform" #loginform="ngForm" novalidate (ngSubmit)="loginForm(loginform.value)">
+        <div align="center" class="logoholder">
+            <img src="./assets/imgs/logo.png" />
+        </div>
+        <ion-list >
+            <ion-item>
+                <ion-label style="color:#564545" color="primary" floating>Email</ion-label>
+                <ion-input  required type="email" #email="ngModel" ngModel pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" id="email" name="email"></ion-input>
+
+          </ion-item>
+          <ion-item>
+              <ion-label style="color:#564545" color="primary" floating>Password</ion-label>
+              <ion-input type="password" name="password" #password="ngModel" ngModel autocomplete="off" id="password"  pattern="^[a-zA-Z1-9].*" minlength="8" maxlength="12" required ></ion-input>
+
+            </ion-item>
+        </ion-list>
+        <div class="bttnbar">
+            <button style="background:#564545" ion-button block type="submit">Login</button>
+        </div>
+        <div align="center">
+            <div><button ion-button clear class="signup" style="color:#564545" type="button" (click)="register()">Sign Up</button></div>
+            <ion-row>
+                <ion-col>
+                    <div><button ion-button clear class="forgetpass" style="color:#564545" type="button" (click)="gotToForgetpassword()">Forgot Password?</button></div>
+                </ion-col>
+            </ion-row>
+        </div>
+    </form>
+</ion-content>

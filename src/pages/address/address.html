@@ -1,0 +1,137 @@
+<!--
+  Generated template for the MaintenancePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-2>
+                    <button ion-button menuToggle icon-only>
+                       <ion-icon name='menu'></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col col-8>
+                    <ion-title align="center" class="headerName">Address Book</ion-title>
+                </ion-col>
+                <ion-col col-2>
+                    <ion-buttons end>
+                        <button ion-button icon-only (click)="goHome()">
+                           <ion-icon name="home"></ion-icon>
+                        </button>
+                    </ion-buttons>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div padding id="div">
+        <ion-segment [(ngModel)]="Notification">
+            <ion-segment-button value="addnew" class="segment-button segment-activated">
+               Add New
+            </ion-segment-button>
+            <ion-segment-button value="inprogress">
+                Address List
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+    <div [ngSwitch]="Notification">
+        <ion-list *ngSwitchCase="'addnew'">
+            <form name="addressform" id="addressform" #addressform="ngForm" novalidate (ngSubmit)="addAddress(addressform.value)">
+                <ion-list>
+                    <ion-item>
+                        <ion-label  floating>Mobile Number</ion-label>
+                        <ion-input  required type="text" #mobileNumber="ngModel" ngModel id="mobileNumber" name="mobileNumber"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label  floating>Door No</ion-label>
+                        <ion-input  required type="text" id="doorNo" name="doorNo" #doorNo="ngModel" ngModel ></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label  floating>Street Name</ion-label>
+                        <ion-input  required type="text" id="street" name="street" #street="ngModel" ngModel></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label  floating>Down Name/Village</ion-label>
+                        <ion-input type="text" name="downName_Village" id="downName_Village" #downName_Village="ngModel" ngModel pattern="^[a-zA-Z0-9]*$" required ></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label  floating>City</ion-label>
+                        <ion-input  name="cityName" id="cityName" #cityName="ngModel" ngModel></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label  floating>Dist Name</ion-label>
+                        <ion-input  name="dist" id="dist" #dist="ngModel" ngModel></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label  floating>State</ion-label>
+                        <ion-select  name="state" id="state" #state="ngModel" ngModel required>
+                            <ion-option [value]="" disabled>Select</ion-option>
+                            <ion-option [value]="TamilNadu">Tamil Nadu</ion-option>
+                            <ion-option [value]="Kerala">Kerala</ion-option>
+                            <ion-option [value]="Karnataka">Karnataka</ion-option>
+                            <ion-option [value]="telugana">telugana</ion-option>
+                            <ion-option [value]="AndraPradesh">Andra Pradesh</ion-option>
+                            <ion-option [value]="Pudhuchery">Pudhuchery</ion-option>
+                            <ion-option [value]="Goa">Goa</ion-option>
+                            <ion-option [value]="Delhi">Delhi</ion-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label  floating>Pin Code</ion-label>
+                        <ion-input  type="text" name="pinCode" id="pinCode" #pinCode="ngModel" ngModel></ion-input>
+                    </ion-item>
+                </ion-list>
+                <div class="bttnbar">
+                    <button style="background:#88325c" ion-button block type="submit" [disabled]="!addressform.valid">Add</button>
+                </div>
+            </form>
+        </ion-list>
+        <!--------------End addnew--------------->
+
+        <!---------------start inprogress---------->
+        <ion-list *ngSwitchCase="'inprogress'" >
+          
+            <ion-item class="notifyBorder" style="background:#88325c;color: white" (click)="changeStatus(data)" *ngFor="let data of GetAddress;let i=index" [style.opacity]="data.status===0 ? '0.3' : '' " [style.z-index]="data.status===1 ? '1' : '' ">
+                <div class="head">
+                    <li style="text-align:center" class="fontFamily">Address {{i+1}}
+                        <img id="closed" (click)="close(data)" src="../../assets/imgs/delete.png" style="width:15px;float:right;">
+                    </li>
+                </div>
+                
+                <div class="content1">
+                    <li>Mobile No : {{data.mobileNumber}}</li>
+                    <li style="float:right">Door No : {{data.doorNo}}</li>
+                </div>
+                <div class="content1">
+                    <li>City : {{data.cityName}}</li>
+                    <li style="float:right">Street : {{data.street}}</li>
+                </div>
+                <div class="content1">
+                        <li>Pin Code : {{data.pinCode}}</li>
+                        <li style="float:right">LandMark : {{data.downName_Village}}</li>
+                    </div>
+                    <div class="content1">
+                            <li>State : {{data.state}}</li>
+                            <li style="float:right">LandMark : {{data.downName_Village}}</li>
+                        </div>
+                <div class="note">
+                    <li></li>
+                </div>
+               
+            </ion-item>
+        </ion-list>
+        <!-----------End inprogress------------->
+
+        <!-----------------Start completed------>
+
+        
+
+        <!-------------------End completed------------------->
+    </div>
+</ion-content>

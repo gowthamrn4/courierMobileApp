@@ -1,0 +1,92 @@
+<ion-header>
+    <ion-navbar hideBackButton>
+        <ion-buttons class="backBtn" (click)="goToBack()" left>
+            <button ion-button icon-only class="backBtn">
+              <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+          </button>
+        </ion-buttons>
+       <ion-title>Receiver Details</ion-title>
+    </ion-navbar>
+   </ion-header>
+  
+  <ion-content padding>
+    <form name="ruleaddform" id="ruleaddform" #ruleaddform="ngForm" novalidate>
+        <ion-row>
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label floating >Name</ion-label>
+                    <ion-input type="text"  id="receiverName" required name="receiverName" #receiverName="ngModel" ngModel minlength="3" maxlength="10"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label  floating>Email</ion-label>
+                    <ion-input type="text"   id="remail" name="remail" #remail="ngModel" ngModel></ion-input>
+                </ion-item>
+            </ion-col>
+
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label  floating>Age</ion-label>
+                    <ion-input type="text"   id="rage" name="rage" #rage="ngModel" ngModel></ion-input>
+                </ion-item>
+            </ion-col>
+
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label  floating>Mobile Number</ion-label>
+                    <ion-input type="text"   id="rmobileNumber" name="rmobileNumber" #rmobileNumber="ngModel" ngModel></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label  floating>Pin Code</ion-label>
+                    <ion-input type="text"   id="rpinCode" name="rpinCode" #rpinCode="ngModel" ngModel></ion-input>
+                </ion-item>
+            </ion-col>
+
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label  floating>DoorNo</ion-label>
+                    <ion-input type="text"   id="rdoorNo" name="rdoorNo" #rdoorNo="ngModel" ngModel></ion-input>
+                </ion-item>
+            </ion-col>
+
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label  floating>City</ion-label>
+                    <ion-input type="text"   id="rcityName" name="rcityName" #rcityName="ngModel" ngModel></ion-input>
+                </ion-item>
+            </ion-col>
+
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label  floating>Street</ion-label>
+                    <ion-input type="text"   id="rstreet" name="rstreet" #rstreet="ngModel" ngModel></ion-input>
+                </ion-item>
+            </ion-col>
+
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label  floating>State</ion-label>
+                    <ion-select  name="rstate" id="rstate" #rstate="ngModel" ngModel required>
+                        <ion-option [value]="" disabled>Select</ion-option>
+                        <ion-option [value]="TamilNadu">Tamil Nadu</ion-option>
+                        <ion-option [value]="Kerala">Kerala</ion-option>
+                        <ion-option [value]="Karnataka">Karnataka</ion-option>
+                        <ion-option [value]="telugana">telugana</ion-option>
+                        <ion-option [value]="AndraPradesh">Andra Pradesh</ion-option>
+                        <ion-option [value]="Pudhuchery">Pudhuchery</ion-option>
+                        <ion-option [value]="Goa">Goa</ion-option>
+                        <ion-option [value]="Delhi">Delhi</ion-option>
+                    </ion-select>                
+                  </ion-item>
+                </ion-col>
+          
+        </ion-row>
+        <div class="bttnbar">
+            <button style="backgroundcolor:brown" ion-button block type="submit" [disabled]="!ruleaddform.valid" (click)="saveRequest(ruleaddform.value)">Submit</button>
+        </div>
+    </form>
+  </ion-content>
+  

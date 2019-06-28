@@ -1,0 +1,49 @@
+<!--
+  Generated template for the PaymentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title><pre>  payment </pre></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2 align="center">  Total Amount : {{price}}</h2>
+  <ion-card>
+    
+  <form name="addressform" id="addressform" #addressform="ngForm" novalidate (ngSubmit)="addPayment(addressform.value)">
+    <ion-list>
+      <ion-item>
+          <ion-label  floating>Name</ion-label>
+          <ion-input  required type="text" #mobileNumber="ngModel" ngModel id="mobileNumber" name="mobileNumber"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label  floating>Card Number</ion-label>
+          <ion-input  required type="text" id="doorNo" name="doorNo" #doorNo="ngModel" ngModel ></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label  floating>Exp Date</ion-label>
+          <ion-input  required type="text" id="street" name="street" #street="ngModel" ngModel></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label  floating>CCV</ion-label>
+          <ion-input type="text" name="downName_Village" id="downName_Village" #downName_Village="ngModel" ngModel pattern="^[a-zA-Z0-9]*$" required ></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label  floating>Amount</ion-label>
+          <ion-input type="text" name="Amount" id="Amount" #Amount="ngModel" ngModel pattern="^[a-zA-Z0-9]*$" required ></ion-input>
+      </ion-item>
+      </ion-list>
+      <div class="bttnbar">
+        <button style="background:#88325c" ion-button block type="submit" >Payment</button>
+    </div>
+      <br>
+      </form>
+  </ion-card>
+</ion-content>
